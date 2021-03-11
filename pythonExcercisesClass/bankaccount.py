@@ -6,16 +6,16 @@ class BankAccount:
         self.balance = balance
 
     def deposit(self, amount):
-        """tu jest coś co sprawdza, czy pieniądze są prawdziwe"""
+        """that function check, is money real"""
         self.balance += amount
 
     def try_withdraw(self, amount):
 
         if (self.balance > amount):
             self.balance -= amount
-            return Ok("Wypłacono kasę", amount)
+            return Ok("Withdrawn money", amount)
 
-        return Error("Nie udało się wypłacić", amount)
+        return Error("Withdrawn failure", amount)
 
     def __str__(self):
         return str(self.balance)
@@ -31,4 +31,4 @@ class MinimumBalanceAccount(BankAccount):
         if (self.balance - amount > self.minimumBalance):
             return super().try_withdraw(amount)
         else:
-            return Error("Nie udało się wypłacić, próba przekroczenia progu", amount)
+            return Error("Withdrawn failure, attempt to exceed a threshold", amount)

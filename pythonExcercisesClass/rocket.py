@@ -14,7 +14,7 @@ class Rocket:
         self.altitude += self.speed
 
     def __str__(self):
-        return "Rakieta jest aktualnie na wysokości: " + str(self.altitude)
+        return "Rocket is on current height: " + str(self.altitude)
 
 
 class RocketBoard:
